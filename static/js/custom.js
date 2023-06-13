@@ -76,6 +76,7 @@ $(document).ready(function() {
       method: 'POST',
       data: data,
       success:function(result){
+        alert(result.code);
         var jss = result;
         if(jss.code === "1"){
           localStorage.setItem("ckey","cktrue");
