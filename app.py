@@ -13,6 +13,15 @@ app.config.from_pyfile('settings.py')
 def index():
     return render_template("chat.html")
 
+@app.route("/yanzheng", methods=["POST"])
+def yanzheng():
+    ckey = request.form.get("ckey", None)
+    c_key = 'd111#111b'#app.config["CKEY"]
+    if ckey != c_key:
+        return jsonify({"code": "0"})
+    else:
+        return jsonify({"code": "1"})
+    
 @app.route("/chat", methods=["POST"])
 def chat():
     messages = request.form.get("prompts", None)
