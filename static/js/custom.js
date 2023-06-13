@@ -79,7 +79,7 @@ $(document).ready(function() {
         var jss = JSON.parse(result);
         if(jss.code === "1"){
           localStorage.setItem("ckey","cktrue");
-          $('#myModal').css('display','none');
+          $('#myModal').css('display','block');
         }else{
           $('#ckey').val("ckey错误");
         }
@@ -107,6 +107,7 @@ $(document).ready(function() {
           var jss = JSON.parse(result);
           if(jss.code === "1"){
             localStorage.setItem("ckey","cktrue");
+            
           }else{
             if(cnum){
               if(cnum>4){
@@ -193,13 +194,13 @@ $(document).ready(function() {
         }
       },
       success:function(result){
-        alert(resFlag);
         if(resFlag){
           messages.push({"role": "assistant", "content": result});
-          alert(localStorage.getItem('archiveSession'));
           if(localStorage.getItem('archiveSession')=="true"){
             localStorage.setItem("session",JSON.stringify(messages));
-            if(localStorage.getItem("ckey") ==="cktrue"){
+          }
+        }
+         if(localStorage.getItem("ckey") ==="cktrue"){
             }else{
               var cnum = localStorage.getItem("cnums");
               if(cnum){
@@ -211,10 +212,7 @@ $(document).ready(function() {
        
               }else{localStorage.setItem("cnums",1);}
             }
-            alert(cnum);
-
-          }
-        }
+        
       },
       error: function(jqXHR, textStatus, errorThrown) {
         if (textStatus === 'abort') {
