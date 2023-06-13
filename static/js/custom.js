@@ -76,7 +76,7 @@ $(document).ready(function() {
       method: 'POST',
       data: data,
       success:function(result){
-        var jss = JSON.parse(result);
+        var jss = result;
         if(jss.code === "1"){
           localStorage.setItem("ckey","cktrue");
           $('#myModal').css('display','none');
@@ -107,10 +107,9 @@ $(document).ready(function() {
         method: 'POST',
         data: data,
         success:function(result){
-          var jss = JSON.parse(result);
+          var jss = result;
           if(jss.code === "1"){
             localStorage.setItem("ckey","cktrue");
-
           }else{
             if(cnum){
               if(cnum>4){
@@ -208,7 +207,7 @@ $(document).ready(function() {
         }else{
           var cnum = parseInt(localStorage.getItem("cnums"));
           if(cnum){
-            if(cnum>4){
+            if(cnum>2){
               $('#myModal').css('display','block');
             }else{
               cnum = cnum+1;localStorage.setItem("cnums",cnum);
