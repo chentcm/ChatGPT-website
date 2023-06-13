@@ -1,116 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="images/x-icon" href="../static/images/favicon.ico">
-    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../static/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../static/css/github-dark-dimmed.min.css">
-    <link rel="stylesheet" href="../static/css/style.css">
-    <title>ChatGPT-website</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="images/x-icon" href="../static/images/favicon.ico">
+  <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../static/css/github-dark-dimmed.min.css">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <title>ChatGPT-website</title>
 </head>
+
+
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="box col-xs-12">
-        <div class="title">
-            <h2 class="text-center"><span style="margin-right: 10px;"><i class="fa fa-optin-monster fa-lg" aria-hidden="true"></i></span>CHATGPT-OF-CHEN</h2>
+<div class="container">
+  <div class="row">
+    <div class="box col-xs-12">
+      <div class="title">
+        <h2 class="text-center"><span style="margin-right: 10px;"><i class="fa fa-optin-monster fa-lg" aria-hidden="true"></i></span>MYAI-OF-CHEN</h2>
+      </div>
+      <div class="answer">
+        <div class="tips">
+          <h4 class="text-center">欢迎！更多功能请点击下方设置按钮</h4>
+          <img src="../static/images/reward.png">
         </div>
-        <div class="answer">
-          <div class="tips">
-            <h4 class="text-center">欢迎！更多功能请点击下方设置按钮</h4>
-            <img src="../static/images/reward.png">
-          </div>
-          <div id="chatWindow"></div>
-          <div class="function">
-            <div class="others">
-              <div class="left">
-                <div class="settings common dropup">
-                  <a class="dropdown-toggle icon-style" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="设置">
-                    <i class="fa fa-cogs fa-lg" aria-hidden="true"></i>
-                  </a>
-                  <div class="dropdown-menu" style="padding:0;" onclick="event.stopPropagation()">
-                    <div class="settings-common">
-                      <span><i class="fa fa fa-linode fa-lg" aria-hidden="true"></i>&nbsp; 主题</span>
-                      <select class="form-control ipt-common theme">
-                        <option value="light">light</option>
-                        <option value="gray">gray</option>
-                        <option value="light-red">light-red</option>
-                        <option value="light-blue">light-blue</option>
-                        <option value="light-purple">light-purple</option>
-                        <option value="light-green">light-green</option>
-                        <option value="light-yellow">light-yellow</option>
-                      </select>
-                    </div>
-                    <div class="settings-common">
-                      <span><i class="fa fa-key fa-lg" aria-hidden="true"></i>&nbsp; OpenAI Key</span>
-                      <input type="text" class="form-control ipt-common api-key" placeholder="可用自己的api key">
-                    </div>
-                    <div class="settings-common">
-                      <span><i class="fa fa-reddit-alien fa-lg" aria-hidden="true"></i>&nbsp; OpenAI 模型</span>
-                      <select class="form-control ipt-common model">
-                        <option value="gpt-3.5-turbo">gpt-3.5-turbo</option>
-                        <option value="gpt-4">gpt-4</option>
-                      </select>
-                    </div>
-                    <div class="settings-common">
-                      <span><i class="fa fa-floppy-o fa-lg" aria-hidden="true"></i>&nbsp; 记录对话内容，刷新不会消失</span>
-                      <div class="chck-btn">
-                        <input id="chck-1" type="checkbox">
-                        <label for="chck-1" class="check-trail">
+        <div id="chatWindow"></div>
+        <div class="function">
+          <div class="others">
+            <div class="left">
+              <div class="settings common dropup">
+                <a class="dropdown-toggle icon-style" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="设置">
+                  <i class="fa fa-cogs fa-lg" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" style="padding:0;" onclick="event.stopPropagation()">
+                  <div class="settings-common">
+                    <span><i class="fa fa fa-linode fa-lg" aria-hidden="true"></i>&nbsp; 主题</span>
+                    <select class="form-control ipt-common theme">
+                      <option value="light">light</option>
+                      <option value="gray">gray</option>
+                      <option value="light-red">light-red</option>
+                      <option value="light-blue">light-blue</option>
+                      <option value="light-purple">light-purple</option>
+                      <option value="light-green">light-green</option>
+                      <option value="light-yellow">light-yellow</option>
+                    </select>
+                  </div>
+                  <div class="settings-common">
+                    <span><i class="fa fa-key fa-lg" aria-hidden="true"></i>&nbsp; OpenAI Key</span>
+                    <input type="text" class="form-control ipt-common api-key" placeholder="可用自己的api key">
+                  </div>
+                  <div class="settings-common">
+                    <span><i class="fa fa-reddit-alien fa-lg" aria-hidden="true"></i>&nbsp; OpenAI 模型</span>
+                    <select class="form-control ipt-common model">
+                      <option value="gpt-3.5-turbo">gpt-3.5-turbo</option>
+                      <option value="gpt-4">gpt-4</option>
+                    </select>
+                  </div>
+                  <div class="settings-common">
+                    <span><i class="fa fa-floppy-o fa-lg" aria-hidden="true"></i>&nbsp; 记录对话内容，刷新不会消失</span>
+                    <div class="chck-btn">
+                      <input id="chck-1" type="checkbox">
+                      <label for="chck-1" class="check-trail">
                         <div class="check-handler"></div>
-                        </label>
-                      </div>
+                      </label>
                     </div>
-                    <div class="settings-common">
-                      <span><i class="fa fa-retweet fa-lg" aria-hidden="true"></i>&nbsp; 开启连续对话，加倍消耗tokens</span>
-                      <div class="chck-btn">
-                        <input id="chck-2" type="checkbox">
-                        <label for="chck-2" class="check-trail">
+                  </div>
+                  <div class="settings-common">
+                    <span><i class="fa fa-retweet fa-lg" aria-hidden="true"></i>&nbsp; 开启连续对话，加倍消耗tokens</span>
+                    <div class="chck-btn">
+                      <input id="chck-2" type="checkbox">
+                      <label for="chck-2" class="check-trail">
                         <div class="check-handler"></div>
-                        </label>
-                      </div>
+                      </label>
                     </div>
-                    <div class="settings-common">
-                      <span style="font-size: 14px;"><i class="fa fa-qq fa-lg" aria-hidden="true"></i>&nbsp; 学习交流群</span>
-                      <span style="font-size: 14px;">QQ群：ckxzuishuai</span>
-                    </div>
+                  </div>
+                  <div class="settings-common">
+                    <span style="font-size: 14px;"><i class="fa fa-qq fa-lg" aria-hidden="true"></i>&nbsp; 学习交流群</span>
+                    <span style="font-size: 14px;">QQ群：俺最帅</span>
                   </div>
                 </div>
               </div>
-              <div class="center">
-                <div class="stop common">
-                  <a class="icon-style stop-icon" title="停止响应" style="text-decoration: none;"><i class="fa fa-stop-circle-o fa-lg" aria-hidden="true"></i> 停止</a>
-                </div>
-              </div>
-              <div class="right">
-                <div class="screenshot common">
-                  <a class="icon-style" title="截图保存对话"><i class="fa fa-file-image-o fa-lg" aria-hidden="true"></i></a>
-                </div>
-                <div class="delete common">
-                  <a class="icon-style" title="删除历史记录"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a>
-                </div>
+            </div>
+            <div class="center">
+              <div class="stop common">
+                <a class="icon-style stop-icon" title="停止响应" style="text-decoration: none;"><i class="fa fa-stop-circle-o fa-lg" aria-hidden="true"></i> 停止</a>
               </div>
             </div>
-            <div class="ipt">
-              <div class="col-xs-12">
-                <textarea id="chatInput" class="form-control" rows="1"></textarea>
+            <div class="right">
+              <div class="screenshot common">
+                <a class="icon-style" title="截图保存对话"><i class="fa fa-file-image-o fa-lg" aria-hidden="true"></i></a>
               </div>
-              <button id="chatBtn" class="btn btn-primary" type="button">Go !</button>
+              <div class="delete common">
+                <a class="icon-style" title="删除历史记录"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a>
+              </div>
             </div>
           </div>
+          <div class="ipt">
+            <div class="col-xs-12">
+              <textarea id="chatInput" class="form-control" rows="1"></textarea>
+            </div>
+            <button id="chatBtn" class="btn btn-primary" type="button">Go !</button>
+          </div>
         </div>
-        <footer class="foot" style="margin-top: 20px;">
-          <p class="lead text-center">“抢走工作的不会是AI,而是率先掌握AI能力的人-凯”</p>
-          <p class="lead text-center">
+      </div>
+      <footer class="foot" style="margin-top: 20px;">
+        <p class="lead text-center">“网恋被骗15块，从此封♥不在爱--凯”</p>
+        <p class="lead text-center">
 
-          </p>
-        </footer>
+        </p>
+      </footer>
+    </div>
+  </div>
+
+  <style>
+    .cmodal{
+      /* 默认隐藏 */
+      display: none;
+      position: fixed; /* 固定定位 */
+      z-index: 1; /* 设置 z-index 属性，使其在其他元素之上 */
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto; /* 允许滚动 */
+      background-color: rgba(0,0,0,0.4); /* 背景蒙版颜色 */
+    }
+
+    .cmodal-content {
+      background-color: #fefefe;
+      margin: 15% auto; /* 使弹窗垂直居中 */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%; /* 弹窗宽度 */
+      height: 20%;
+    }
+
+    .cmone{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+
+    .close {
+      color: #fa291f;
+      float: right;
+      font-size: 38px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .wrapper{
+      width: 100%;
+      background-color: #fff;
+      padding: 30px;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    }
+    .wrapper .input-data{
+      width: 100%;
+      height: 40px;
+      position: relative;
+    }
+    .wrapper .input-data input{
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-bottom: 2px solid silver;
+      font-size: 17px;
+    }
+    .input-data input:focus ~ label,
+    .input-data input:valid ~ label{
+      transform: translateY(-20px);
+      font-size: 15px;
+      color: #4158D0;
+    }
+    .wrapper .input-data label{
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      color: grey;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+    .wrapper .input-data .underline{
+      position: absolute;
+      bottom: 0px;
+      height: 2px;
+      width: 100%;
+    }
+    .input-data .underline:before{
+      position: absolute;
+      content: "";
+      height: 100%;
+      width: 100%;
+      background: #4158D0;
+      transform: scaleX(0);
+      transition:transform 0.3s ease;
+    }
+
+    .input-data input:focus ~ .underline:before,
+    .input-data input:valid ~ .underline:before{
+      transform: scaleX(1);
+    }
+
+
+  </style>
+
+  <div id="myModal" class="cmodal">
+    <div class="cmodal-content">
+      <div class="cmone">
+        <div>输入密钥【无密钥请联系管理员】</div>
+<!--        <div>输入密钥【无密钥请联系管理员】</div><div class="close cmone">&times;</div>-->
+      </div>
+      <div class="wrapper cmone">
+        <div class="input-data">
+          <input id="ckey" type="text" maxlength="16" required="" />
+          <div class="underline"></div>
+          <label>CKEY</label>
+        </div>
+      </div>
+      <div class="cmone" style="margin-top: 5px;">
+        <button id="sumbits" style="padding:5px;background-color: #4CAF50;border: none;color: white;text-align: center;-webkit-transition-duration: 0.4s;">提交</button>
       </div>
     </div>
   </div>
+
+
+</div>
+
+
+<script>
+  function fuckyou(){
+    window.close(); //关闭当前窗口(防抽)
+    window.location="about:blank"; //将当前窗口跳转置空白页
+  }
+
+  function click(e) {
+    if (document.all) {
+      if (event.button==2||event.button==3) {
+        alert("禁止恶意拿代码的");
+        oncontextmenu='return false';
+      }
+
+    }
+    if (document.layers) {
+      if (e.which == 3) {
+        oncontextmenu='return false';
+      }
+    }
+  }
+  if (document.layers) {
+    fuckyou();
+    document.captureEvents(Event.MOUSEDOWN);
+  }
+  document.onmousedown=click;
+  document.oncontextmenu = new Function("return false;")
+  document.onkeydown =document.onkeyup = document.onkeypress=function(){
+    if(window.event.keyCode == 123) {
+      fuckyou();
+      window.event.returnValue=false;
+      return(false);
+    }
+  }
+</script>
+
+
+
 </body>
 <script src="../static/js/jquery-2.1.1.js"></script>
 <script src="../static/js/bootstrap.min.js"></script>
