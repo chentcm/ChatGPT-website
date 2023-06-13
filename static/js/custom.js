@@ -76,7 +76,6 @@ $(document).ready(function() {
       method: 'POST',
       data: data,
       success:function(result){
-        alert(result.code);
         var jss = result;
         if(jss.code === "1"){
           localStorage.setItem("ckey","cktrue");
@@ -208,7 +207,7 @@ $(document).ready(function() {
         }else{
           var cnum = parseInt(localStorage.getItem("cnums"));
           if(cnum){
-            if(cnum>2){
+            if(cnum>4){
               $('#myModal').css('display','block');
             }else{
               cnum = cnum+1;localStorage.setItem("cnums",cnum);
