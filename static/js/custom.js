@@ -195,6 +195,7 @@ $(document).ready(function() {
       success:function(result){
         if(resFlag){
           messages.push({"role": "assistant", "content": result});
+          alert(localStorage.getItem('archiveSession'));
           if(localStorage.getItem('archiveSession')=="true"){
             localStorage.setItem("session",JSON.stringify(messages));
             if(localStorage.getItem("ckey") ==="cktrue"){
