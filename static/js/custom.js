@@ -193,6 +193,7 @@ $(document).ready(function() {
         }
       },
       success:function(result){
+        alert(resFlag);
         if(resFlag){
           messages.push({"role": "assistant", "content": result});
           alert(localStorage.getItem('archiveSession'));
