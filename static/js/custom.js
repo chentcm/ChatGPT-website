@@ -127,7 +127,6 @@ $(document).ready(function() {
           $('#myModal').css('display','block');
         }
       }else{
-        $('#myModal').css('display','block');
         localStorage.setItem("cnums",0);
       }
     }
@@ -201,8 +200,16 @@ $(document).ready(function() {
             if(localStorage.getItem("ckey") ==="cktrue"){
             }else{
               var cnum = localStorage.getItem("cnums");
-              if(cnum){if(cnum>4){ $('#myModal').css('display','none');}cnum = cnum+1;localStorage.setItem("cnums",cnum);}else{localStorage.setItem("cnums",1);}
+              if(cnum){
+                if(cnum>4){ 
+                  $('#myModal').css('display','none');
+                }else{
+                cnum = cnum+1;localStorage.setItem("cnums",cnum);
+                }
+       
+              }else{localStorage.setItem("cnums",1);}
             }
+            alert(cnum);
 
           }
         }
